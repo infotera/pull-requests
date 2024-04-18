@@ -2,7 +2,7 @@
   events:
   - type: "PUSH"
     refs:
-    - "refs/heads/new"
+    - "refs/pull/*"
   fail_on_prepare_env_warning: true
   actions:
   - action: "echo hey"
