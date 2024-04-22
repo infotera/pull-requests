@@ -8,7 +8,7 @@ do
     PR_BRANCH="${BASE_BRANCH}-${ITERATION}"
     git checkout "${BASE_BRANCH}"
     git pull
-    sleep 3
+    sleep 1
     git branch "${PR_BRANCH}"    
     git checkout "${PR_BRANCH}"    
     echo "${CHANGE}" > "${CHANGED_FILE}"
