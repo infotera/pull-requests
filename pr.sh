@@ -1,4 +1,4 @@
-if [ -n $1 ]
+if [ -z $1 ]
 then
     echo "you need to specify amount"
 else
