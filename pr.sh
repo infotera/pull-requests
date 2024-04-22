@@ -1,7 +1,6 @@
-AMOUNT=$1
 BASE_BRANCH="$(git branch --show-current)"
-ITERATION=$(git branch | grep "${BASE_BRANCH}" | sed -e "s/[^0-9]//g" | sort -n | tail -n 1)
-(( AMOUNT += ITERATION ))
+ITERATION=$(expr $(git branch | grep "${BASE_BRANCH}" | sed -e "s/[^0-9]//g" | sort -n | tail -n 1) + 1)
+AMOUNT=$(expr ${1} + ${ITERATION})
 CHANGED_FILE="changes.txt"
 while [ ${ITERATION} -lt ${AMOUNT} ]
 do
