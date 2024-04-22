@@ -2,7 +2,7 @@ AMOUNT=$1
 ITERATION=0
 CHANGED_FILE="changes.txt"
 
-BASE_BRANCH="$(git branch --show-current)-$(date)"
+BASE_BRANCH="$(git branch --show-current)-$(date +%s)"
 git branch "${BASE_BRANCH}" && git checkout "${BASE_BRANCH}"    
 touch ${CHANGED_FILE} && git add ${CHANGED_FILE}
 git commit -am "pull request base"
