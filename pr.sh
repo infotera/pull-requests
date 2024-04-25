@@ -9,7 +9,7 @@ else
 
     BASE_BRANCH="${BRANCH}-$(date +%s)"
     git branch "${BASE_BRANCH}" && git checkout "${BASE_BRANCH}"    
-    touch ${CHANGED_FILE} && git add ${CHANGED_FILE} && git commit -am "pull request base"
+    touch ${CHANGED_FILE} && git add ${CHANGED_FILE} && git commit -am "pull request base" || true
     git push -u origin "${PR_BRANCH}"
 
     while [ ${ITERATION} -lt ${AMOUNT} ]
