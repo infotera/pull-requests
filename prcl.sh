@@ -1,0 +1,7 @@
+START_PR_NUMBER=217
+END_PR_NUMBER=219
+while [ $START_PR_NUMBER -le $END_PR_NUMBER ]
+do
+    gh pr close $START_PR_NUMBER
+    (( START_PR_NUMBER++ ))
+done
